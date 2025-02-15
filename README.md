@@ -3,7 +3,7 @@
 <hr>
 
 <p align="center">
-<img src="imgs/logos/siberianWellnessLogo.svg" height="192px" width="668px" />
+<img alt="Siberian Wellness" src="imgs/logos/siberianWellnessLogo.svg" height="192px" width="668px" />
 </p>
 
 ## Описание
