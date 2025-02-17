@@ -1,6 +1,4 @@
-<div align="center"><h1>Проект автоматизации тестирования <a target="_blank" href="https://kz.siberianwellness.com/kz-ru/">Siberian Wellness</a></h1></div>
-
-<hr>
+<div align="center"><h1>Проект автоматизации тестирования интернет-магазина <a target="_blank" href="https://kz.siberianwellness.com/kz-ru/">Siberian Wellness</a></h1></div>
 
 <p align="center">
 <img alt="Siberian Wellness" src="imgs/logos/siberianWellnessLogo.svg" height="192px" width="668px" />
