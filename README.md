@@ -4,6 +4,19 @@
 <img alt="Siberian Wellness" src="imgs/logos/siberianWellnessLogo.svg" height="192px" width="668px" />
 </p>
 
+## Содержание
++ [Описание](#описание)
++ [Особенности проекта](#особенности-проекта)
++ [Технологии и инструменты](#технологии-и-инструменты)
++ [Реализованные проверки](#реализованные-проверки)
++ [Запуск тестов](#запуск-тестов)
+  + [Допустимые комбинации](#допустимые-комбинации)
++ [Cборка тестов в Jenkins](#cборка-тестов-в-ba-target_blank-hrefjenkinsab)
++ [Интеграция с Allure report](#интеграция-с-ba-target_blank-hrefallure-reportab)
++ [Интеграция с Allure TestOps](#интеграция-с-ba-target_blank-hrefallure-testopsab)
++ [Интеграция с Jira](#интеграция-с-ba-target_blank-hrefjiraab)
++ [Уведомления в Telegram с использованием бота](#уведомления-в-telegram-с-использованием-бота)
+
 ## Описание
 **Siberian Wellness** — международная Компания, выпускающая инновационные продукты для здоровья, красоты и спорта на основе дикорастущих сибирских трав и растений.
 
@@ -76,3 +89,32 @@
 - [x] Отображение оформленного заказа в истории заказов
 - [x] Возможность оплатить неоплаченный заказ
 - [x] Выход из аккаунта
+
+## Запуск тестов
+Конфигурационные файлы `.properties` лежат в папке `resources`. <br/>
+При необходимости можно изменить их.
+### Допустимые комбинации
+```mermaid 
+flowchart LR
+    A(gradle) --> B(clean)
+    B --> C{Выбрать тег}
+    C --> D[test]
+    C --> E[web]
+    C --> F[api]
+    C --> G[android]
+    E --> H[-DenvWeb=local]
+    E --> I[-DenvWeb=remote]
+    G --> J[-DenvMobile=browserstack]
+    G --> K[-DenvMobile=emulator]
+    G --> L[-DenvMobile=localDevice]
+```
+
+## Cборка тестов в <b><a target="_blank" href="">Jenkins</a></b>
+
+## Интеграция с <b><a target="_blank" href="">Allure report</a></b>
+
+## Интеграция с <b><a target="_blank" href="">Allure TestOps</a></b>
+
+## Интеграция с <b><a target="_blank" href="">Jira</a></b>
+
+## Уведомления в Telegram с использованием бота
