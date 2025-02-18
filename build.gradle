@@ -13,7 +13,11 @@ dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation (
             'org.junit.jupiter:junit-jupiter',
-            'com.codeborne:selenide:7.7.0'
+            'com.codeborne:selenide:7.7.0',
+            'org.apache.logging.log4j:log4j-api:2.24.3',
+            'org.apache.logging.log4j:log4j-core:2.24.3',
+            'org.apache.logging.log4j:log4j-slf4j2-impl:2.24.3'
+
 
     )
 }
