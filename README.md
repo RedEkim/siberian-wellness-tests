@@ -11,7 +11,7 @@
 + [Реализованные проверки](#реализованные-проверки)
 + [Запуск тестов](#запуск-тестов)
   + [Допустимые комбинации](#допустимые-комбинации)
-+ [Cборка тестов в Jenkins](#cборка-тестов-в-ba-target_blank-hrefjenkinsab)
++ [Cборка тестов в Jenkins](#cборка-тестов-в-jenkins)
 + [Интеграция с Allure report](#интеграция-с-ba-target_blank-hrefallure-reportab)
 + [Интеграция с Allure TestOps](#интеграция-с-ba-target_blank-hrefallure-testopsab)
 + [Интеграция с Jira](#интеграция-с-ba-target_blank-hrefjiraab)
