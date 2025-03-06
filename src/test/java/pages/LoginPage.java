@@ -14,8 +14,7 @@ public class LoginPage {
         forgotPass = $("[class='sign-in__forgot-pass']"),
         fieldPassword = $("input[name='password']"),
         fieldContractOrEmail = $("input[name='contractOrEmail']"),
-        userBarName = $("[data-qa='VUSERBAR_NAME']")
-    ;
+        userBarName = $("[data-qa='VUSERBAR_NAME']")    ;
 
     @Step("Login by contract and password")
     public LoginPage loginByContractAndPassword() {
