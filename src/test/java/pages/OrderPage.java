@@ -1,11 +1,21 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.selector.ByText;
 import helpers.components.LogIn;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
+import java.util.List;
+
+import static com.codeborne.selenide.CollectionCondition.size;
+import static com.codeborne.selenide.CollectionCondition.textsInAnyOrder;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
+import static constants.KzPaymentServices.CARD;
+import static constants.KzPaymentServices.SELFPAY;
 
 public class OrderPage {
     private final SelenideElement
@@ -14,6 +24,8 @@ public class OrderPage {
         btnChoose= $("[data-qa='SW_BUTTON']"),
         btnSubmit = $("[data-qa='DELIVERY-RECIPIENT-DATA-SUBMIT']"),
         buyByCard = $("[data-qa='ORDER_CARD_TITLE_EPAY2']");
+
+    private final String paymentTypeList = ".order-delivery-radio-select";
 
     /** loaded component LogIn
      *  this component was build in package component
@@ -72,8 +84,20 @@ public class OrderPage {
     }
 
     @Step("Choose method of pay")
-    public OrderPage payByCard() {
-        $(By.type("radio")).selectRadio("[data-qa='ORDER_CARD_TITLE_EPAY2']");
+    public OrderPage payBy(String paymentType) {
+        //$(By.type("radio")).selectRadio("[data-qa='ORDER_CARD_TITLE_EPAY2']");
+        var type = $$(paymentTypeList).filter(text(paymentType)).first();
+        type.click();
+        type.$("[type='radio'][data-checked='true']").shouldBe(Condition.checked);
+        return this;
+    }
+
+    @Step("Проверяем, что для Казахстана всегда отображается два способа оплаты")
+    public OrderPage checkListKzPaymentType() {
+        $$(paymentTypeList).shouldHave(size(2)
+                .because("Список с доступными способами оплаты должен быть из двух элементов"));
+        $$(".order-delivery-radio-select__title")
+                .shouldHave(textsInAnyOrder(List.of(CARD, SELFPAY)));
         return this;
     }
 }
