@@ -2,16 +2,15 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.selector.ByText;
 import helpers.components.LogIn;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
 
 import java.util.List;
 
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.CollectionCondition.textsInAnyOrder;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static constants.KzPaymentServices.CARD;
@@ -23,7 +22,9 @@ public class OrderPage {
         courierDelivery = $("[data-qa='courier']"),
         btnChoose= $("[data-qa='SW_BUTTON']"),
         btnSubmit = $("[data-qa='DELIVERY-RECIPIENT-DATA-SUBMIT']"),
-        buyByCard = $("[data-qa='ORDER_CARD_TITLE_EPAY2']");
+        buyByCard = $("[data-qa='ORDER_CARD_TITLE_EPAY2']"),
+        btnSummarySubmit = $("[data-qa='summarySubmit']"),
+        emailForCheck = $("input[type='email']");
 
     private final String paymentTypeList = ".order-delivery-radio-select";
 
@@ -85,7 +86,6 @@ public class OrderPage {
 
     @Step("Choose method of pay")
     public OrderPage payBy(String paymentType) {
-        //$(By.type("radio")).selectRadio("[data-qa='ORDER_CARD_TITLE_EPAY2']");
         var type = $$(paymentTypeList).filter(text(paymentType)).first();
         type.click();
         type.$("[type='radio'][data-checked='true']").shouldBe(Condition.checked);
@@ -98,6 +98,19 @@ public class OrderPage {
                 .because("Список с доступными способами оплаты должен быть из двух элементов"));
         $$(".order-delivery-radio-select__title")
                 .shouldHave(textsInAnyOrder(List.of(CARD, SELFPAY)));
+        return this;
+    }
+
+    @Step("Click by button SummarySubmit")
+    public OrderPage clickBtnSummarySubmit() {
+        btnSummarySubmit.shouldBe(visible);
+        btnSummarySubmit.click();
+        return this;
+    }
+
+    @Step("Set email for check")
+    public  OrderPage setEmailForCheck() {
+        emailForCheck.setValue("testforSW@testmail.com");
         return this;
     }
 }
