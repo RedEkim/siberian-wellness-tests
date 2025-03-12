@@ -7,11 +7,11 @@ import org.aeonbits.owner.Config;
 public interface WebConfig extends Config {
 
     @Key("baseUrl")
-    @DefaultValue("https://countrystage.siberianhealth.com/kz-ru/")
+    @DefaultValue("https://countrystage.siberianhealth.com/kz-ru")
     String getBaseUrl();
 
     @Key("baseUri")
-    @DefaultValue("https://countrystage.siberianhealth.com/kz-ru/")
+    @DefaultValue("https://countrystage.siberianhealth.com/kz-ru")
     String getBaseUri();
 
     @Key("browserName")
