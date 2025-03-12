@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import lombok.Getter;
 import org.junit.jupiter.api.Test;
-import pages.LoginPage;
+import pages.web.LoginPage;
 import tests.TestBase;
 
 import static com.codeborne.selenide.Selenide.$;

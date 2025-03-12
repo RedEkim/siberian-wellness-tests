@@ -1,8 +1,7 @@
-package pages;
+package pages.web;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import net.nosma.Main;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
