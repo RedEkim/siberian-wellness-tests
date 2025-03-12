@@ -2,7 +2,6 @@ package pages.web;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import helpers.components.LogIn;
 import io.qameta.allure.Step;
 
 import java.util.List;
@@ -33,7 +32,7 @@ public class OrderPage {
      *  because it often uses
      */
 
-    LogIn login = new LogIn();
+    AuthorizationPage login = new AuthorizationPage();
 
     @Step("Click by logIn")
     public OrderPage clickByLogIn() {
