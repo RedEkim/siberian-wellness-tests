@@ -36,7 +36,7 @@ public class OrderPage {
     LogIn login = new LogIn();
 
     @Step("Click by logIn")
-    public  OrderPage clickByLogIn() {
+    public OrderPage clickByLogIn() {
         login.getBtnLogIn().click();
         return this;
     }
