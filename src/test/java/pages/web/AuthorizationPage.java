@@ -6,6 +6,7 @@ import lombok.Getter;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class AuthorizationPage {
     @Getter
@@ -18,6 +19,13 @@ public class AuthorizationPage {
             fieldPassword = $("input[name='password']"),
             fieldContractOrEmail = $("input[name='contractOrEmail']"),
             userBarName = $("[data-qa='VUSERBAR_NAME']");
+
+
+    @Step("Open login page")
+    public AuthorizationPage openLoginPage() {
+        open("/login");
+        return this;
+    }
 
     @Step("Login by contract and password")
     public AuthorizationPage loginByContractAndPassword() {

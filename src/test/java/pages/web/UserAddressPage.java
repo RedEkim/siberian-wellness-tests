@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class AddressPage {
+public class UserAddressPage {
     private final SelenideElement
         btnAddAddressStandart = $("[data-qa='SW_BUTTON']"),
         btnToolTip = $("[data-qa='SW_TOOLTIP_BUBBLE']"),
