@@ -27,6 +27,12 @@ public class AuthorizationPage {
         return this;
     }
 
+    @Step("Check visible of sign in title")
+    public AuthorizationPage checkSignInTitle(String signInTitle) {
+        $(".sign-in__title").shouldBe(text(signInTitle));
+        return this;
+    }
+
     @Step("Login by contract and password")
     public AuthorizationPage loginByContractAndPassword() {
         authByMailOrRegNumber.click();
